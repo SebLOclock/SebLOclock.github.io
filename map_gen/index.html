@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/63114fbe80.js" crossorigin="anonymous"></script>
     <title>Map gen</title>
 </head>
 
 <body>
-    <h1>Map Generator</h1>
+    <div class="heading">
+        <h1>Map Generator</h1>
+        <i id="toggle" class="fa-solid fa-moon"></i>
+    </div>
 
     <div class="container">
         <div class="form">
@@ -90,6 +94,10 @@
             getCode();
         }
 
+        function toggleTheme(){
+            document.body.classList.toggle('dark');
+        }
+
        generate();
 
 
@@ -97,12 +105,12 @@
         let q = document.querySelector('#q');
         let h = document.querySelector('#height');
         let w = document.querySelector('#width');
-
+        let toggle = document.querySelector('#toggle');
 
         q.addEventListener('change', generate);
         h.addEventListener('change', generate);
         w.addEventListener('change', generate);
-
+        toggle.addEventListener('click', toggleTheme);
     </script>
 </body>
 

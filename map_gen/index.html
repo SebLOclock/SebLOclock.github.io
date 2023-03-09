@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Map gen</title>
+</head>
+
+<body>
+    <h1>Map Generator</h1>
+
+    <div class="container">
+        <div class="form">
+            <form>
+                <label for="width">Largeur</label>
+                <input type="range" name="width" id="width" value="400" min="1" max="2000">
+                <label for="height">Hauteur</label>
+                <input type="range" name="height" id="height" value="400" min="1" max="2000">
+                <label for="Adresse">Adresse</label>
+                <input type="text" name="q" id="q" >
+            </form>
+        </div>
+        <div class="map">
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="code">
+        <h2>Code</h2>
+        <textarea name="mapCode" id="mapCode" cols="30" rows="10"></textarea>
+    </div>
+
+    <script>
+        function generateGoogleMap(){
+
+            let qValue = document.querySelector('#q').value;
+            let h = document.querySelector('#height').value;
+            let w = document.querySelector('#width').value;
+
+            let endStyle = `
+            <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            height: ${h}px;
+                            width: ${w}px;
+                        }
+                    </style>`;
+                    let link = `<a href="https://www.embedgooglemap.net">google maps embed map</a>`;
+                    const beginStyle =`                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: ${h}px;
+                            width: ${w}px;
+                        }
+                    </style>`;
+
+                    let iframe = document.createElement('iframe');
+                    iframe.setAttribute('width', '600');
+                    iframe.setAttribute('height', '500');
+                    iframe.setAttribute('id', 'gmap_canvas');
+                    iframe.setAttribute('src', `https://maps.google.com/maps?q=${qValue}k&t=&z=13&ie=UTF8&iwloc=&output=embed`);
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('scrolling', 'no');
+                    iframe.setAttribute('marginheight', '0');
+                    iframe.setAttribute('marginwidth', '0');
+
+                    let map = document.querySelector('.gmap_canvas');
+                    map.innerHTML = beginStyle + iframe.outerHTML + endStyle + link;
+
+        }
+
+
+        function getCode(){
+            let map = document.querySelector('.gmap_canvas');
+            let code = document.querySelector('#mapCode');
+
+            code.value = map.innerHTML;
+        }
+
+        async function generate(){
+            await generateGoogleMap();
+            getCode();
+        }
+
+       generate();
+
+
+
+        let q = document.querySelector('#q');
+        let h = document.querySelector('#height');
+        let w = document.querySelector('#width');
+
+
+        q.addEventListener('change', generate);
+        h.addEventListener('change', generate);
+        w.addEventListener('change', generate);
+
+    </script>
+</body>
+
+</html>

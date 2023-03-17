@@ -40,28 +40,28 @@ const paddingModule = {
             paddingVal.textContent = padding.value;
         });
 
-        pLeft.addEventListener('change', function () {
+        pLeft.addEventListener('input', function () {
             box[0].style.paddingLeft = pLeft.value + 'px';
             box[1].style.paddingLeft = pLeft.value + 'px';
 
             functionsModule.changeVisibilityAndVal(paddingLeftText, paddingLeftVal, {"top": pTop.value, "right": pRight.value, "bottom": pBottom.value, "left": pLeft.value}, 'left', 'padding');
         });
 
-        pRight.addEventListener('change', function () {
+        pRight.addEventListener('input', function () {
             box[0].style.paddingRight = pRight.value + 'px';
             box[1].style.paddingRight = pRight.value + 'px';
             
             functionsModule.changeVisibilityAndVal(paddingRightText, paddingRightVal, {"top": pTop.value, "right": pRight.value, "bottom": pBottom.value, "left": pLeft.value}, 'right', 'padding');
         });
 
-        pTop.addEventListener('change', function () {
+        pTop.addEventListener('input', function () {
             box[0].style.paddingTop = pTop.value + 'px';
             box[1].style.paddingTop = pTop.value + 'px';
 
             functionsModule.changeVisibilityAndVal(paddingTopText, paddingTopVal, {"top": pTop.value, "right": pRight.value, "bottom": pBottom.value, "left": pLeft.value}, 'top', 'padding');
         });
 
-        pBottom.addEventListener('change', function () {
+        pBottom.addEventListener('input', function () {
             box[0].style.paddingBottom = pBottom.value + 'px';
             box[1].style.paddingBottom = pBottom.value + 'px';
 
@@ -95,7 +95,7 @@ const paddingModule = {
                 pRight.value = 0;
                 pTop.value = 0;
                 pBottom.value = 0;
-                
+
                 paddingTopVal.textContent = '0';
                 paddingRightVal.textContent = '0';
                 paddingBottomVal.textContent = '0';

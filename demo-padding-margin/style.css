@@ -41,3 +41,30 @@ body{
     text-align: center;
     background-color: #f1f1f1;
 }
+
+.css-code {
+    height: 8em;
+    width: 25em;
+    margin-left: 40%;
+    margin-top: 5em;
+    border-radius: 10px;
+    background-color: rgb(59, 59, 59);
+    color: white;
+    padding: 2em;
+}
+
+.dim {
+    color: fuchsia;
+}
+
+.prop {
+    color: greenyellow;
+}
+
+.valDim {
+    color: red;
+}
+
+.css-code>div {
+    margin-left: 25px;
+}

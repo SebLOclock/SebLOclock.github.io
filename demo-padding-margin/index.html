@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <title>Demo margin padding</title>
 </head>
-
 <body>
     <h1>Demo Padding et Margin CSS</h1>
 
     <div class="container">
-        <div class="box"></div>
-        <div class="box"></div>
+        <div class="box">
+            <img src="./chaton.svg">
+        </div>
+        <div class="box">
+            <img src="./chaton.svg">
+        </div>
     </div>
 
     <div class="param">
@@ -33,10 +35,8 @@
         <div>
             <div class="prop">padding: <span class="valDim" id="paddingval">0</span><span class="dim">px;</span></div>
             <div class="prop">margin: <span class="valDim" id="marginval">0</span><span class="dim">px;</span></div>
-            <div class="prop">border: <span class="valDim" id="borderval">1</span><span class="dim">px solid
-                    black;</span></div>
-            <div class="prop">border-radius: <span class="valDim" id="radiusval">10</span><span class="dim">px;</span>
-            </div>
+            <div class="prop">border: <span class="valDim" id="borderval">1</span><span class="dim">px solid black;</span></div>
+            <div class="prop">border-radius: <span class="valDim" id="radiusval">10</span><span class="dim">px;</span></div>
         </div>
         }
     </div>
@@ -55,32 +55,33 @@
 
         const box = document.querySelectorAll('.box');
 
-        padding.addEventListener('input', function () {
+        padding.addEventListener('input', function(){
             box[0].style.padding = padding.value + 'px';
             box[1].style.padding = padding.value + 'px';
 
-            paddingVal.textContent = padding.value + 'px';
+            paddingVal.textContent = padding.value;
         })
 
-        margin.addEventListener('input', function () {
+        margin.addEventListener('input', function(){
             box[0].style.margin = margin.value + 'px';
             box[1].style.margin = margin.value + 'px';
-
-            marginVal.textContent = margin.value + 'px';
+            
+            marginVal.textContent = margin.value;
         })
 
-        border.addEventListener('input', function () {
+        border.addEventListener('input', function(){
             box[0].style.border = (parseInt(border.value) + 1) + "px solid black";
             box[1].style.border = (parseInt(border.value) + 1) + "px solid black";
 
-            borderVal.textContent = (parseInt(border.value) + 1) + "px solid black";
+            borderVal.textContent = (parseInt(border.value) + 1);
         })
 
-        radius.addEventListener('input', function () {
-            box[0].style.borderRadius = (10 + parseInt(radius.value)) + "px";
-            box[1].style.borderRadius = (10 + parseInt(radius.value)) + "px";
+        radius.addEventListener('input', function(){
+            box[0].style.borderRadius  = (10 + parseInt(radius.value)) + 'px';
+            box[1].style.borderRadius  = (10 + parseInt(radius.value)) + 'px';
+
+            radiusVal.textContent = (parseInt(radius.value) + 10);
         })
     </script>
 </body>
-
 </html>

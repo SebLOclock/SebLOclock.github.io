@@ -18,7 +18,7 @@ body{
 .box{
     width: 300px;
     height: 300px;
-    background-color: #000dc4;
+    background-color: #353c9e;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     margin: 0px;
@@ -27,9 +27,8 @@ body{
 
 .param{
     width: 50%;
-    margin: 0 auto;
+    margin: 5vh auto;
     height: 100%;
-
 }
 
 .param input{
@@ -44,8 +43,8 @@ body{
 
 .css-code {
     height: 8em;
-    width: 25em;
-    margin-left: 40%;
+    width: 90%;
+    margin: 0 auto;
     margin-top: 5em;
     border-radius: 10px;
     background-color: rgb(59, 59, 59);
@@ -67,4 +66,8 @@ body{
 
 .css-code>div {
     margin-left: 25px;
+}
+
+img {
+    width: 100%;
 }

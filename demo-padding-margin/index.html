@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Demo margin padding</title>
+</head>
+<body>
+    <h1>Demo Padding et Margin CSS</h1>
+
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <div class="param">
+        <label for="padding">Padding</label>
+        <input type="range" name="padding" id="padding" value="0">
+        <Label for="margin">Margin</Label>
+        <input type="range" name="margin" id="margin" value="0">
+
+    </div>
+
+    <script>
+
+        const padding = document.getElementById('padding');
+        const margin = document.getElementById('margin');
+        const box = document.querySelectorAll('.box');
+
+        padding.addEventListener('input', function(){
+            box[0].style.padding = padding.value + 'px';
+            box[1].style.padding = padding.value + 'px';
+        })
+
+        margin.addEventListener('input', function(){
+            box[0].style.margin = margin.value + 'px';
+            box[1].style.margin = margin.value + 'px';
+        })
+    </script>
+</body>
+</html>

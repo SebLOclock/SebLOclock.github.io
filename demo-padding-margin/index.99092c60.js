@@ -1,0 +1,2 @@
+const themeModule={init:()=>{const e=document.getElementById("dark-mode");let t=localStorage.getItem("theme");t&&"dark"===t&&(document.body.classList.add(t),e.checked=!0),e.addEventListener("change",themeModule.toggleTheme)},toggleTheme:()=>{const e=document.getElementById("dark-mode");let t=localStorage.getItem("theme");t&&"dark"===t?(document.body.classList.remove("dark"),localStorage.setItem("theme","light"),e.checked=!1):(document.body.classList.add("dark"),localStorage.setItem("theme","dark"),e.checked=!0)}};
+//# sourceMappingURL=index.99092c60.js.map

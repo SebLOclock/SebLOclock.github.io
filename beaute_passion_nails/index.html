@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauté Passion’nails</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="bg-black shadow custom-header">
+        <div class="container mx-auto flex justify-between items-center p-5">
+            <h1 class="text-3xl font-bold custom-logo">Beauté Passion’nails</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="hover:text-blue-400 custom-nav-link">Accueil</a></li>
+                    <li><a href="#services" class="hover:text-blue-400 custom-nav-link">Services</a></li>
+                    <li><a href="#products" class="hover:text-blue-400 custom-nav-link">Produits</a></li>
+                    <li><a href="#about" class="hover:text-blue-400 custom-nav-link">À propos</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400 custom-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="bg-cover bg-center h-screen text-white custom-home-section" style="background-image: url('./images/img1.jpg');">
+        <div class="container mx-auto h-full flex items-center justify-center">
+            <div class="text-center animate-fadeIn">
+                <img src="path/to/logo.png" alt="Beauté Passion’nails Logo" class="mx-auto mb-6">
+                <h2 class="text-5xl font-bold mb-4 animate-bounce">Bienvenue chez Beauté Passion’nails</h2>
+                <p class="text-xl mb-8 animate-pulse">Votre spécialiste en prothèse ongulaire et soins esthétiques.</p>
+                <a href="#services" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-500 custom-button animate-bounce">Nos Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-800 custom-section">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-10 custom-heading animate-fadeInUp">Nos Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card -->
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg custom-card animate-fadeInUp">
+                    <h3 class="text-2xl font-bold mb-4 custom-card-heading">Pose chablons</h3>
+                    <p class="text-gray-400 mb-4 custom-card-text">Pose de chablons pour des ongles élégants et résistants.</p>
+                    <span class="text-blue-400 font-bold custom-card-price">45 €</span>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg custom-card animate-fadeInUp">
+                    <h3 class="text-2xl font-bold mb-4 custom-card-heading">Remplissage</h3>
+                    <p class="text-gray-400 mb-4 custom-card-text">Remplissage pour des ongles toujours parfaits.</p>
+                    <span class="text-blue-400 font-bold custom-card-price">40 €</span>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg shadow-lg custom-card animate-fadeInUp">
+                    <h3 class="text-2xl font-bold mb-4 custom-card-heading">Vernis semi-permanent</h3>
+                    <p class="text-gray-400 mb-4 custom-card-text">Vernis semi-permanent pour des ongles éclatants.</p>
+                    <span class="text-blue-400 font-bold custom-card-price">25 €</span>
+                </div>
+                <!-- Add more services as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-900 custom-section">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-10 custom-heading animate-fadeInUp">Nos Produits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product Card -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg custom-card animate-fadeInUp">
+                    <h3 class="text-2xl font-bold mb-4 custom-card-heading">Huile à cuticules</h3>
+                    <p class="text-gray-400 mb-4 custom-card-text">Huile nourrissante pour des cuticules en bonne santé.</p>
+                    <span class="text-blue-400 font-bold custom-card-price">6 €</span>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg custom-card animate-fadeInUp">
+                    <h3 class="text-2xl font-bold mb-4 custom-card-heading">Crème mains et corps</h3>
+                    <p class="text-gray-400 mb-4 custom-card-text">Crème hydratante pour mains et corps.</p>
+                    <span class="text-blue-400 font-bold custom-card-price">12,50 €</span>
+                </div>
+                <!-- Add more products as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800 custom-section">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-10 custom-heading animate-fadeInUp">À propos de nous</h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6 custom-text">Beauté Passion’nails, fondée par Amélie Lemoine, est une micro-entreprise spécialisée dans la prothésie ongulaire située à Beuvardes. Nous nous distinguons par notre approche innovante, apportant nos services directement chez vous grâce à notre atelier mobile.</p>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6 custom-text">Chez Beauté Passion’nails, nous comprenons l'importance d'avoir des ongles impeccables et soignés, et nous sommes dédiés à offrir des services de la plus haute qualité à nos clients. Que ce soit pour une pose de chablons, un remplissage ou un vernis semi-permanent, notre équipe utilise les meilleurs produits et techniques pour garantir des résultats durables et esthétiques.</p>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6 custom-text">Notre concept d'atelier mobile nous permet de vous offrir une flexibilité et une commodité inégalées. Plus besoin de vous déplacer en salon, nous venons à vous ! Notre caravane aménagée est équipée de tout le matériel nécessaire pour transformer vos ongles et vous offrir une expérience de beauté relaxante et professionnelle directement à votre domicile ou à l'endroit de votre choix.</p>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6 custom-text">En plus de nos services de prothésie ongulaire, nous proposons également une gamme de produits esthétiques complémentaires, tels que des huiles à cuticules nourrissantes et des crèmes hydratantes pour les mains et le corps. Nous offrons également des objets du quotidien en résine époxy, ajoutant une touche d'élégance et de fonctionnalité à votre routine quotidienne.</p>
+            <p class="text-gray-400 text-lg leading-relaxed mb-6 custom-text">Notre engagement envers la satisfaction client se reflète dans notre approche personnalisée et attentive. Nous prenons le temps de comprendre vos besoins et vos préférences, et nous nous efforçons de créer des looks qui vous correspondent parfaitement. De plus, notre programme de fidélisation et nos offres spéciales vous permettent de bénéficier de services de qualité à des prix avantageux.</p>
+            <p class="text-gray-400 text-lg leading-relaxed custom-text">Chez Beauté Passion’nails, notre mission est de rendre les soins des ongles accessibles, pratiques et agréables pour toutes nos clientes. Nous sommes impatients de vous rencontrer et de vous offrir une expérience de beauté exceptionnelle.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 custom-section">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-10 custom-heading animate-fadeInUp">Contactez-nous</h2>
+            <form class="max-w-lg mx-auto bg
+            <form class="max-w-lg mx-auto bg-gray-800 p-8 rounded-lg shadow-lg custom-form animate-fadeInUp">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-400 mb-2 custom-label">Nom</label>
+                    <input type="text" id="name" class="w-full p-2 border border-gray-600 rounded-lg custom-input" placeholder="Votre nom">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-400 mb-2 custom-label">Email</label>
+                    <input type="email" id="email" class="w-full p-2 border border-gray-600 rounded-lg custom-input" placeholder="Votre email">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-400 mb-2 custom-label">Message</label>
+                    <textarea id="message" class="w-full p-2 border border-gray-600 rounded-lg custom-input" rows="4" placeholder="Votre message"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-500 custom-button">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 custom-footer">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-600">&copy; 2024 Beauté Passion’nails. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

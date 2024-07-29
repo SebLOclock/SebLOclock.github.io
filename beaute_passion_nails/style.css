@@ -1,0 +1,145 @@
+/* Custom Styles */
+
+.custom-header {
+    background-color: #1a202c; /* Dark background for header */
+}
+
+.custom-logo {
+    color: #edf2f7; /* Light color for logo text */
+}
+
+.custom-nav-link {
+    color: #edf2f7; /* Light color for navigation links */
+}
+
+.custom-nav-link:hover {
+    color: #63b3ed; /* Light blue on hover */
+}
+
+.custom-home-section {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly dark overlay */
+}
+
+.custom-button {
+    background-color: #3182ce; /* Blue background for buttons */
+    border: 2px solid #2b6cb0; /* Darker blue border for buttons */
+}
+
+.custom-button:hover {
+    background-color: #2b6cb0; /* Darker blue on hover */
+}
+
+.custom-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.custom-heading {
+    color: #63b3ed; /* Light blue for section headings */
+}
+
+.custom-card {
+    transition: transform 0.2s;
+    border: 1px solid #4a5568; /* Gray border for cards */
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+}
+
+.custom-card-heading {
+    color: #63b3ed; /* Light blue for card headings */
+}
+
+.custom-card-text {
+    color: #cbd5e0; /* Light gray for card text */
+}
+
+.custom-card-price {
+    color: #63b3ed; /* Light blue for prices */
+}
+
+.custom-text {
+    color: #a0aec0; /* Light gray for paragraph text */
+}
+
+.custom-form {
+    background-color: #2d3748; /* Dark background for form */
+    border: 1px solid #4a5568; /* Gray border for form */
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.custom-label {
+    color: #a0aec0; /* Light gray for form labels */
+}
+
+.custom-input {
+    border-color: #4a5568; /* Gray border for inputs */
+    background-color: #1a202c; /* Dark background for inputs */
+    color: #edf2f7; /* Light text for inputs */
+}
+
+.custom-input:focus {
+    border-color: #63b3ed; /* Light blue on focus */
+    background-color: #2d3748; /* Slightly lighter background on focus */
+    color: #edf2f7; /* Light text for inputs */
+}
+
+.custom-footer {
+    background-color: #1a202c; /* Dark background for footer */
+    border-top: 1px solid #4a5568; /* Gray border at the top of footer */
+    color: #cbd5e0; /* Light gray text for footer */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* black overlay on #home */
+#home {
+    position: relative;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,8 @@
+# Sébastien Lemoine
+
+Il y a des parcours qui se dessinent comme une œuvre d’art, où chaque coup de pinceau représente une étape de la vie, une nouvelle compétence acquise, une passion découverte. Le mien est un peu de cette trempe-là. Plongé dans l’univers captivant du développement, j’ai trouvé mon sanctuaire dans les lignes de code, ces suites de caractères mystérieuses pour certains, mais pour moi, une langue universelle et fascinante. J’ai suivi une formation en développement, une aventure initiatique qui a posé les fondations solides de mon expertise technique et qui m’a permis de plonger dans les abysses du code avec une curiosité insatiable.
+Au-delà des lignes de code, ce qui me fait vibrer, c’est l’idée de transmettre ce savoir, cette flamme. J’ai eu le privilège d’endosser le rôle de formateur, une expérience humaine riche et gratifiante. Enseigner, ce n’est pas seulement partager des connaissances, c’est aussi inspirer, guider, et parfois même apprendre autant de ses élèves que ce qu’on leur enseigne. C’est une interaction, une danse intellectuelle où chacun ressort grandi.
+
+## Tech
+
+Bien que se concentrer sur un domaine ou une techno puisse avoir un certains nombre d'avantage, je préfère user de ma capaciter à m'adapter et à m'ouvrir à tout le spectre qu'offre la tech. Ainsi, le développement, l'admin sys, le DevOps, la cybersécurité sont autant de domaines qui me passionnent. Ce qui m'a fait choisir la tech c'est aussi cette possibilité de varier les plaisirs sur le plan fonctionnel. On peut tout aussi bien un jour se retrouver à faire du data engineering pour le domaine bancaire et le lendemain, développer une application pour un magicien :D

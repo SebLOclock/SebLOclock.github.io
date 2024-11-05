@@ -1,0 +1,2 @@
+projectsManager.init(projects);
+

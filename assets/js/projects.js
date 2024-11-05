@@ -4,7 +4,7 @@ const projects = [
         title: 'Margin Padding',
         description: 'Une petite interface permettant de visualiser les effets de marges et paddings d\'un élément HTML.',
         image: 'public/images/demo-m-p.png',
-        url: 'https://sebloclock.github.io/demo-margin-padding/',
+        url: 'https://sebloclock.github.io/demo-padding-margin',
         technologies: ['HTML', 'CSS', 'JavaScript']
     }, {
         id: 2,

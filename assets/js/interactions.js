@@ -105,7 +105,7 @@ function hideElement(id) {
     element.classList.add('hide');
 
     element.addEventListener('animationend', () => {
-        div.classList.add('hidden');
+        element.classList.add('hidden');
     }, { once: true });
 }
 

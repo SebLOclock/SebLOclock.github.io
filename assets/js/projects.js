@@ -21,6 +21,6 @@ const projects = [
         image: 'public/images/pmcode-icon.png',
         screenshot: 'public/images/pmcode.png',
         url: 'https://marketplace.visualstudio.com/items?itemName=SebLOclock.pmcode',
-        technologies: ['javascript', 'VS Code']
+        technologies: ['JavaScript', 'VS Code']
     }
 ];

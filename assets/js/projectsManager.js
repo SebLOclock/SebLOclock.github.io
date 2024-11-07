@@ -118,9 +118,8 @@ const projectsManager = {
         const element = document.getElementById(id);
         element.classList.remove('show');
         element.classList.add('hide');
-        element.addEventListener('animationend', () => {
-            element.innerText = '';
-        });
+        element.textContent = '';
+
 
     },
 

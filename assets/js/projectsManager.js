@@ -80,18 +80,10 @@ const projectsManager = {
         link.target = '_blank';
         link.textContent = 'Voir le projet';
         link.classList.add('project-link');
-        const button = document.createElement('button');
-        button.textContent = 'Fermer';
-        button.classList.add('close');
-        button.addEventListener('click', () => {
-            this.hideElement('description');
-            container.classList.add('hidden');
-        });
-
+        
         const actions = document.createElement('div');
         actions.classList.add('actions');
         actions.appendChild(link);
-        actions.appendChild(button);
 
 
         container.appendChild(title);
@@ -108,20 +100,17 @@ const projectsManager = {
     showElement: function (id, project) {
         const element = document.getElementById(id);
 
+        // on efface le contenu de la div en fade out
+        element.classList.remove('show');
+        element.classList.add('hide');
+        element.textContent = '';
         // Modifier le contenu de la div
         this.constructDescription(element, project);
         element.classList.remove('hide');
         element.classList.add('show');
     },
 
-    hideElement: function (id) {
-        const element = document.getElementById(id);
-        element.classList.remove('show');
-        element.classList.add('hide');
-        element.textContent = '';
-
-
-    },
+   
 
     constructProject: function (project) {
         const projectTitle = document.createElement('h3');

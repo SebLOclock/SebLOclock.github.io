@@ -22,6 +22,10 @@ const projectsManager = {
                 technology.classList.add('html');
             }
 
+            if (technology.textContent === 'VS Code') {
+                technology.classList.add('vscode');
+            }
+
             if (technology.textContent === 'CSS') {
                 technology.classList.add('css');
             }
@@ -63,6 +67,14 @@ const projectsManager = {
             technologies.appendChild(li);
         });
 
+        let screenshot = null;
+        if (project.screenshot) {
+            screenshot = document.createElement('img');
+            screenshot.src = project.screenshot;
+            screenshot.alt = project.title;
+            screenshot.classList.add('screenshot');
+        }
+
         const link = document.createElement('a');
         link.href = project.url;
         link.target = '_blank';
@@ -73,6 +85,7 @@ const projectsManager = {
         button.classList.add('close');
         button.addEventListener('click', () => {
             this.hideElement('description');
+            container.classList.add('hidden');
         });
 
         const actions = document.createElement('div');
@@ -84,38 +97,31 @@ const projectsManager = {
         container.appendChild(title);
         container.appendChild(description);
         container.appendChild(technologies);
+        if (screenshot) { container.appendChild(screenshot); }
         container.appendChild(actions);
 
         this.stylizeTags();
+
+        container.classList.remove('hidden');
     },
 
     showElement: function (id, project) {
         const element = document.getElementById(id);
 
-        // vérivier si l'élément est déjà affiché
-        if (element.classList.contains('show')) {
-            this.hideElement(element.id);
-        }
-
         // Modifier le contenu de la div
         this.constructDescription(element, project);
-
-        // Supprimer la classe hidden et ajouter la classe show pour démarrer l'animation
-        element.classList.remove('hidden', 'hide');
+        element.classList.remove('hide');
         element.classList.add('show');
     },
 
     hideElement: function (id) {
         const element = document.getElementById(id);
-
-        element.textContent = '';
-        // Supprimer la classe show et ajouter la classe hidden pour démarrer l'animation
         element.classList.remove('show');
         element.classList.add('hide');
-
         element.addEventListener('animationend', () => {
-            element.classList.add('hidden');
-        }, { once: true });
+            element.innerText = '';
+        });
+
     },
 
     constructProject: function (project) {

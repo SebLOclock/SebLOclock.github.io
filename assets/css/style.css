@@ -77,18 +77,22 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes growWidth {
     from {
         width: 0;
+        opacity: 0;
     }
     to {
         width: 50%;
+        opacity: 1;
     }
 }
 
 @keyframes reduceWidth {
     from {
         width: 50%;
+        opacity: 1;
     }
     to {
         width: 0;
+        opacity: 0;
     }
     
 }
@@ -115,6 +119,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #description {
+    overflow: hidden;
     margin-top: 1rem;
     border-radius: 10px;
     flex-direction: column;
@@ -191,18 +196,22 @@ button:hover, .project-link:hover {
     @keyframes growWidth {
         from {
             width: 0;
+            opacity: 0;
         }
         to {
             width: 100%;
+            opacity: 1;
         }
     }
     
     @keyframes reduceWidth {
         from {
             width: 100%;
+            opacity: 1;
         }
         to {
             width: 0;
+            opacity: 0;
         }
         
     }

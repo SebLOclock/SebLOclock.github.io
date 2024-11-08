@@ -1,4 +1,6 @@
 const projectsManager = {
+
+
     projects: [],
     init: function (projects) {
         this.projects = projects;
@@ -80,7 +82,7 @@ const projectsManager = {
         link.target = '_blank';
         link.textContent = 'Voir le projet';
         link.classList.add('project-link');
-        
+
         const actions = document.createElement('div');
         actions.classList.add('actions');
         actions.appendChild(link);
@@ -98,19 +100,33 @@ const projectsManager = {
     },
 
     showElement: function (id, project) {
+
         const element = document.getElementById(id);
 
-        // on efface le contenu de la div en fade out
-        element.classList.remove('show');
-        element.classList.add('hide');
-        element.textContent = '';
-        // Modifier le contenu de la div
-        this.constructDescription(element, project);
-        element.classList.remove('hide');
-        element.classList.add('show');
+        console.log(`l'ement contient la class show : ${element.classList.contains('show')}`);
+        // si la div est déjà affichée, on ne fait rien
+        if (element.classList.contains('show')) {
+
+            // on efface le contenu de la div en fade out
+            element.classList.remove('show');
+            element.classList.add('hide');
+
+            element.addEventListener('animationend', () => {
+                element.textContent = '';
+                this.constructDescription(element, project);
+                element.classList.remove('hide');
+                element.classList.add('show');
+            });
+        }else{
+            this.constructDescription(element, project);
+            element.classList.remove('hide');
+            element.classList.add('show');
+        }
+
+
     },
 
-   
+
 
     constructProject: function (project) {
         const projectTitle = document.createElement('h3');

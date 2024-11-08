@@ -19,7 +19,7 @@ const projects = [
         title: 'PMCode',
         description: 'PMCode est une extension VS Code permettant de gérer un projet kanban à partir des commentaires du code.',
         image: 'public/images/pmcode-icon.png',
-        screenshot: 'public/images/pmcode.png',
+        screenshot: 'public/images/pmcode-v104.png',
         url: 'https://marketplace.visualstudio.com/items?itemName=SebLOclock.pmcode',
         technologies: ['JavaScript', 'VS Code']
     }

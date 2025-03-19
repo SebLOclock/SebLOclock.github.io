@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio - John Doe</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <img src="assets/images/logo.png" alt="Logo de John Doe">
+        </div>
+        <nav class="header__nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#about" class="nav__link">À propos</a></li>
+                <li class="nav__item"><a href="#projects" class="nav__link">Projets</a></li>
+                <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__text">
+                <h1 class="hero__title">Bonjour, je suis John Doe</h1>
+                <p class="hero__subtitle">Designer UI/UX créatif & passionné</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2 class="about__title">À propos de moi</h2>
+            <p class="about__description">
+                Je suis un designer UI/UX avec plus de 5 ans d'expérience dans la création de designs interactifs et
+                intuitifs.
+            </p>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2 class="projects__title">Mes projets</h2>
+            <div class="projects__list">
+                <div class="projects__item">
+                    <img src="https://via.placeholder.com/400x300" alt="Projet 1" class="projects__image">
+                    <h3 class="projects__name">Projet 1</h3>
+                </div>
+                <div class="projects__item">
+                    <img src="https://via.placeholder.com/400x300" alt="Projet 2" class="projects__image">
+                    <h3 class="projects__name">Projet 2</h3>
+                </div>
+                <div class="projects__item">
+                    <img src="https://via.placeholder.com/400x300" alt="Projet 3" class="projects__image">
+                    <h3 class="projects__name">Projet 3</h3>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 class="contact__title">Contactez-moi</h2>
+            <form class="contact__form">
+                <label for="name" class="contact__label">Nom</label>
+                <input type="text" id="name" class="contact__input" placeholder="Votre nom">
+                
+                <label for="email" class="contact__label">Email</label>
+                <input type="email" id="email" class="contact__input" placeholder="Votre email">
+                
+                <button type="submit" class="contact__button">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__text">© 2025 John Doe. Tous droits réservés.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

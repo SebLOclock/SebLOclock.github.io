@@ -3,7 +3,7 @@ name: Deploy to OVH
 on:
   push:
     branches:
-      - main  # Remplacez par la branche que vous souhaitez déployer
+      - main
 
 jobs:
   deploy:
@@ -19,11 +19,10 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
       run: |
-        # Installer lftp pour le transfert FTP
         sudo apt-get install -y lftp
-        # Transférer les fichiers vers le serveur OVH
         lftp -e "
           open $FTP_SERVER
           user $FTP_USERNAME $FTP_PASSWORD
           mirror --reverse --delete --verbose --exclude .git/ . /www/
+          bye
         "

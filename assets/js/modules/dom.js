@@ -9,7 +9,7 @@ export const createBlogPost = (post) => {
     article.appendChild(articleImage);
 
     const articleTitle = document.createElement('h3');
-    articleTitle.textContent = post.title.rendered;
+    articleTitle.textContent = cleanText(DOMPurify.sanitize(post.title.rendered));
     articleTitle.classList.add('blog-post__title');
     article.appendChild(articleTitle);
 
@@ -46,7 +46,7 @@ export const createBlogListItem = (post) => {
     articleContent.classList.add('blog-list__content');
 
     const articleTitle = document.createElement('h3');
-    articleTitle.textContent = DOMPurify.sanitize(post.title.rendered);
+    articleTitle.textContent = cleanText(DOMPurify.sanitize(post.title.rendered));
     articleTitle.classList.add('blog-list__title');
     articleContent.appendChild(articleTitle);
 
@@ -130,6 +130,15 @@ export const createArticleContent = (article) => {
     contentContainer.appendChild(articleContent);
 };
 
+const cleanText = (text) => {
+    return text
+        .replace(/&rsquo;/g, "'")
+        .replace(/&quot;/g, '"')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>');
+};
+
 export const createCompetenceItem = (competence) => {
     const li = document.createElement('li');
     li.className = 'competence-item';
@@ -155,7 +164,7 @@ export const createCompetenceItem = (competence) => {
     
     const text = document.createElement('span');
     text.className = 'competence-text';
-    text.textContent = competence;
+    text.textContent = cleanText(competence);
     
     li.appendChild(icon);
     li.appendChild(text);

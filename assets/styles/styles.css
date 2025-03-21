@@ -481,12 +481,14 @@
     content: '\f073';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
+    margin-right: 5px;
   }
 
   .blog-post__author::before {
     content: '\f007';
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
+    margin-right: 5px;
   }
 
   .blog-post__link {

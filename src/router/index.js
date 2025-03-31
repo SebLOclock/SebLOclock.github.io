@@ -19,7 +19,13 @@ const router = createRouter({
     {
       path: '/article/:slug',
       name: 'article',
-      component: ArticleView
+      component: ArticleView,
+      props: true
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('@/views/NotFoundView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {
@@ -34,6 +40,11 @@ const router = createRouter({
       return { top: 0 }
     }
   }
+})
+
+router.beforeEach((to, from, next) => {
+  console.log('Navigation vers:', to.path)
+  next()
 })
 
 export default router 

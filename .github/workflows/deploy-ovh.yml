@@ -13,6 +13,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build application
+      run: npm run build
+
     - name: Upload to OVH
       env:
         FTP_SERVER: ${{ secrets.FTP_SERVER }}
@@ -23,6 +34,6 @@ jobs:
         lftp -e "
           open $FTP_SERVER
           user $FTP_USERNAME $FTP_PASSWORD
-          mirror --reverse --delete --verbose --exclude .git/ . /www/
+          mirror --reverse --delete --verbose --exclude .git/ dist/ /www/
           bye
         "

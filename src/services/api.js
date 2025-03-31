@@ -1,8 +1,21 @@
 const API_BASE_URL = 'https://blog.sebastienlemoine.fr/wp-json/wp/v2'
 
+const fetchOptions = {
+  method: 'GET',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  mode: 'cors',
+  credentials: 'omit'
+}
+
 export const fetchPosts = async (perPage = 10) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/posts?_embed&per_page=${perPage}`)
+    console.log('Tentative de récupération des articles...')
+    const response = await fetch(`${API_BASE_URL}/posts?_embed&per_page=${perPage}`, fetchOptions)
+    console.log('Statut de la réponse:', response.status)
+    
     if (!response.ok) {
       throw new Error(`Erreur HTTP: ${response.status}`)
     }
@@ -16,7 +29,11 @@ export const fetchPosts = async (perPage = 10) => {
 export const fetchPostBySlug = async (slug) => {
   try {
     console.log(`Tentative de récupération de l'article avec le slug: ${slug}`)
-    const response = await fetch(`${API_BASE_URL}/posts?slug=${slug}&_embed`)
+    const url = `${API_BASE_URL}/posts?slug=${encodeURIComponent(slug)}&_embed`
+    console.log('URL de la requête:', url)
+    
+    const response = await fetch(url, fetchOptions)
+    console.log('Statut de la réponse:', response.status)
     
     if (!response.ok) {
       throw new Error(`Erreur HTTP: ${response.status}`)

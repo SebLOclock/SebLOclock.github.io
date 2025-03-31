@@ -53,13 +53,26 @@ onMounted(async () => {
     loading.value = true
     error.value = null
     const slug = route.params.slug
+    
+    console.log('Route actuelle:', route.fullPath)
+    console.log('Slug extrait:', slug)
+    
     if (!slug) {
       throw new Error('Slug non fourni')
     }
+    
+    // Vérifier si l'URL est correcte
+    const expectedUrl = `/article/${slug}`
+    if (route.fullPath !== expectedUrl) {
+      console.warn('URL non standard détectée:', route.fullPath)
+    }
+    
     article.value = await fetchPostBySlug(slug)
     if (!article.value) {
       throw new Error('Article non trouvé')
     }
+    
+    console.log('Article chargé avec succès:', article.value)
   } catch (err) {
     error.value = err.message
     console.error('Erreur lors du chargement de l\'article :', err)

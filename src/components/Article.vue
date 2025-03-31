@@ -53,15 +53,16 @@ onMounted(async () => {
     loading.value = true
     error.value = null
     const slug = route.params.slug
-    if (slug) {
-      article.value = await fetchPostBySlug(slug)
-      if (!article.value) {
-        error.value = 'Article non trouvé'
-      }
+    if (!slug) {
+      throw new Error('Slug non fourni')
     }
-  } catch (error) {
-    console.error('Erreur lors du chargement de l\'article :', error)
-    error.value = 'Erreur lors du chargement de l\'article'
+    article.value = await fetchPostBySlug(slug)
+    if (!article.value) {
+      throw new Error('Article non trouvé')
+    }
+  } catch (err) {
+    error.value = err.message
+    console.error('Erreur lors du chargement de l\'article :', err)
   } finally {
     loading.value = false
   }

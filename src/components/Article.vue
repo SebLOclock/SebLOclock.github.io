@@ -26,6 +26,8 @@
       <div class="article__content-container">
         <div class="article__content" v-html="article.content.rendered"></div>
       </div>
+
+      <RecentArticles />
     </template>
     <div v-else class="error">
       Article non trouvé
@@ -34,10 +36,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { fetchPostBySlug } from '@/services/api'
 import DOMPurify from 'dompurify'
+import RecentArticles from './RecentArticles.vue'
 
 const route = useRoute()
 const article = ref({})
@@ -48,23 +51,15 @@ const formatDate = (date) => {
   return new Date(date).toLocaleDateString()
 }
 
-onMounted(async () => {
+const loadArticle = async (slug) => {
   try {
     loading.value = true
     error.value = null
-    const slug = route.params.slug
     
-    console.log('Route actuelle:', route.fullPath)
-    console.log('Slug extrait:', slug)
+    console.log('Chargement de l\'article avec le slug:', slug)
     
     if (!slug) {
       throw new Error('Slug non fourni')
-    }
-    
-    // Vérifier si l'URL est correcte
-    const expectedUrl = `/article/${slug}`
-    if (route.fullPath !== expectedUrl) {
-      console.warn('URL non standard détectée:', route.fullPath)
     }
     
     article.value = await fetchPostBySlug(slug)
@@ -79,7 +74,22 @@ onMounted(async () => {
   } finally {
     loading.value = false
   }
+}
+
+// Charger l'article initial
+onMounted(() => {
+  loadArticle(route.params.slug)
 })
+
+// Observer les changements de route
+watch(
+  () => route.params.slug,
+  (newSlug) => {
+    if (newSlug) {
+      loadArticle(newSlug)
+    }
+  }
+)
 </script>
 
 <style scoped>

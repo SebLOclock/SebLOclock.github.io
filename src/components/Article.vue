@@ -59,7 +59,6 @@ const loadArticle = async (slug) => {
     error.value = null
     views.value = null
     
-    console.log('Chargement de l\'article avec le slug:', slug)
     
     if (!slug) {
       throw new Error('Slug non fourni')
@@ -79,7 +78,6 @@ const loadArticle = async (slug) => {
       // Ne pas bloquer l'affichage de l'article si l'incrémentation échoue
     }
     
-    console.log('Article chargé avec succès:', article.value)
   } catch (err) {
     error.value = err.message
     console.error('Erreur lors du chargement de l\'article :', err)

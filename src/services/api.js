@@ -1,5 +1,5 @@
 const API_BASE_URL = 'https://blog.sebastienlemoine.fr/wp-json/wp/v2'
-const PVC_API_URL = 'https://blog.sebastienlemoine.fr/wp-json/pvc/v1'
+const PVC_API_URL = 'https://blog.sebastienlemoine.fr/wp-json/post-views-counter'
 
 const fetchOptions = {
   method: 'GET',
@@ -56,7 +56,7 @@ export const fetchPostBySlug = async (slug) => {
 
 export const incrementPostViews = async (postId) => {
   try {
-    const url = `${PVC_API_URL}/view?id=${postId}`
+    const url = `${PVC_API_URL}/view-post/${postId}`
     
     const response = await fetch(url, {
       method: 'POST',

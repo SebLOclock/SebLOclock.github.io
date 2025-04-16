@@ -20,6 +20,7 @@
         <div class="article__meta-info">
           <p class="article__date">{{ formatDate(article.date) }}</p>
           <p class="article__author">{{ article._embedded.author[0].name }}</p>
+          <p v-if="views !== null" class="article__views">{{ views }} vues</p>
         </div>
       </div>
       
@@ -38,7 +39,7 @@
 <script setup>
 import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { fetchPostBySlug } from '@/services/api'
+import { fetchPostBySlug, incrementPostViews } from '@/services/api'
 import DOMPurify from 'dompurify'
 import RecentArticles from './RecentArticles.vue'
 
@@ -46,6 +47,7 @@ const route = useRoute()
 const article = ref({})
 const loading = ref(true)
 const error = ref(null)
+const views = ref(null)
 
 const formatDate = (date) => {
   return new Date(date).toLocaleDateString()
@@ -55,6 +57,7 @@ const loadArticle = async (slug) => {
   try {
     loading.value = true
     error.value = null
+    views.value = null
     
     console.log('Chargement de l\'article avec le slug:', slug)
     
@@ -65,6 +68,15 @@ const loadArticle = async (slug) => {
     article.value = await fetchPostBySlug(slug)
     if (!article.value) {
       throw new Error('Article non trouvé')
+    }
+    
+    // Incrémenter le compteur de vues
+    try {
+      const viewsData = await incrementPostViews(article.value.id)
+      views.value = viewsData.views
+    } catch (viewsError) {
+      console.error('Erreur lors de l\'incrémentation des vues:', viewsError)
+      // Ne pas bloquer l'affichage de l'article si l'incrémentation échoue
     }
     
     console.log('Article chargé avec succès:', article.value)
@@ -105,5 +117,24 @@ watch(
   padding: 2rem;
   color: #dc3545;
   font-size: 1.2rem;
+}
+
+.article__meta-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.article__views {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.article__views::before {
+  content: "👁";
+  font-size: 1.1em;
 }
 </style> 
